@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <link rel="stylesheet" href="/resurse/css/produse/produse.css" type="text/css" />
+        <title>NewVision - home</title>
+        <%- include("../fragmente/head") %>     
+        <script type="text/javascript" src=/resurse/js/produse.js></script>
+        
+    </head>
+    <body>
+    <%- include("../fragmente/header") %>
+    <div id="link">
+        <div id="triunghi"><a href="#">&#5123</a></div>
+        <div id="text">Link top</div>
+    </div>
+    <main><br><br><br>
+        <div class="accordion-flush mb-2 mt-2">
+            <div class="accordion-item" id="acc-itemOne">
+                <button id="acc-buttonOne" class="btn btn-secondary text-light mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Ascunde Filtre
+                </button>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+            <div class="accordion-body">
+            <div id="filtre" class="container">
+            
+            <div class="row">
+            <div class="col" id="div-magazin">
+                <label for="inp-disponibil_magazin">Select multiplu:</label>
+                <select id="inp-disponibil_magazin" multiple size="8">
+                    <option id="sel-toate-magazin" selected value="toate">oricare</option>
+                    <option value="Bucuresti Baneasa">Bucuresti Baneasa</option>
+                    <option value="Craiova">Craiova</option>
+                    <option value="Bucuresti Iuliu Maniu">Bucuresti Iuliu Maniu</option>
+                    <option value="Brasov">Brasov</option>
+                    <option value="Constanta">Constanta</option>
+                    <option value="Cluj">Cluj</option>
+                    <option value="Timisoara">Timisoara</option>
+                </select>
+            </div>
+       
+        <div class="btn-group btn-group-toggle col" data-toggle="buttons"> Latime lentila:<!-- trebuie sa aiba acelasi name ca sa formeze un grup -->
+            <div>
+            <div>
+                <input id="i_rad1"  name="gr_rad" value="0:15" type="radio"/>
+                <label class="btn btn-outline-primary mb-2" for="i_rad1">Lentila de contact (latime lentila &lt; 15)
+                </label>
+            </div>
+            <div>
+                <input id="i_rad2"  name="gr_rad" value="40:50" type="radio"/>
+                <label class="btn btn-outline-primary mb-2" for="i_rad2">Latime mica (40 &lt; latime lentila &lt; 50)
+                </label>
+            </div>
+            <div>
+                <input id="i_rad3" name="gr_rad" value="50:1000000000" type="radio"/>
+                <label class="btn btn-outline-primary mb-2" for="i_rad3">Latime medie/mare (50 &le; latime lentila)
+                </label>
+            </div>
+            <div>
+                <input id="i_rad4" checked name="gr_rad" value="toate" type="radio"/>
+                <label class="btn btn-outline-primary mb-2" for="i_rad4">Toate 
+                </label>
+            </div>
+            </div>
+            </div>
+        <div class="col" id="div-culoare">
+            <span>Culoare ochelari</span>
+            <div id="ul-checkbox">
+                <div><input type="checkbox" id="i_ch0" checked name="gr_ch" value="toate">
+                    <label class="btn btn-outline-primary mb-1" for="i_ch0">
+                    toate
+                </label></div>
+                <div><input type="checkbox" id="i_ch1" name="gr_ch" value="roz">
+                    <label class="btn btn-outline-primary mb-1" for="i_ch1">
+                    roz
+                </label></div>
+                <div>
+                    <input type="checkbox" id="i_ch2" name="gr_ch" value="albastru">
+                    <label class="btn btn-outline-primary mb-1" for="i_ch2">
+                    albastru
+                </label></div>
+                <div><input type="checkbox" id="i_ch3" name="gr_ch" value="maro">
+                    <label class="btn btn-outline-primary mb-1" for="i_ch3">
+                    maro
+                </label></div>
+                <div><input type="checkbox" id="i_ch4" name="gr_ch" value="negru">
+                    <label class="btn btn-outline-primary mb-1" for="i_ch4">
+                    negru
+                </label></div>
+                <div>
+                    <input type="checkbox" id="i_ch5" name="gr_ch" value="verde">
+                    <label class="btn btn-outline-primary mb-1" for="i_ch5">
+                    verde
+                </label></div>
+                <div>
+                    <input type="checkbox" id="i_ch6" name="gr_ch" value="transparent">
+                    <label class="btn btn-outline-primary mb-1" for="i_ch6">
+                    transparent
+                </label></div>
+                <div>
+                    <input type="checkbox" id="i_ch7" name="gr_ch" value="auriu">
+                    <label class="btn btn-outline-primary mb-1" for="i_ch7">
+                    auriu
+                </label></div>
+
+            </div>
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="col" id="div-descriere">
+            <label for="inp-descriere">Descriere</label>
+            <textarea id="inp-descriere" rows="3" cols="20" ></textarea>
+
+        </div>
+        <div class="col"><label> Nume: <input type="text" class="form-control" id="inp-nume"></label>
+            <small style="display:none;" id="input-invalid-txt">
+                Input invalid!
+            </small>
+        </div>
+        <div class="col" id="div-stoc">
+            <label for="inp-pe_stoc">Produs pe stoc: </label>
+            <input list="pe_stoc" id="inp-pe_stoc">
+            <datalist id="pe_stoc">
+                <option value="Da">Da</option>
+                <option value="Nu">Nu</option>
+            </datalist>
+        </div>   
+
+</div>
+        <div class="row">
+        <div class="col"><label> Pret minim: <input type="range" id="inp-pret" value="0" min="0"  max="150" class="form-range"> <span id="infoRange">(0)</span></label></div>
+        <div class="col"><label> Pret maxim: <input type="range" id="inp-pret2" value="0" min="0"  max="501" class="form-range"> <span id="infoRange2">(0)</span></label></div>
+        
+        <div class="col">
+        <label>Select simplu:
+            <select id="inp-producator">
+                <option id="sel-toate" selected value="toate">toate</option>
+                <% for (let opt of locals.optiuni) { %>
+                    <option value="<%- opt.producator%>"><%- opt.producator%> </option>
+                <% } %>
+            </select>
+        </label></div>
+</div>
+        
+        <p id="p-suma"></p>
+        <p id="butoane-filtre">
+
+        <button id="filtrare" class="btn text-light bg-primary mb-2"><i class="bi bi-filter-left"></i> <span id="txt-filtrare">Filtreaza</span></button>
+        <button id="resetare" class="btn text-light bg-primary mb-2"><i class="bi bi-x-circle"></i></i> <span id="txt-resetare">Reseteaza</span></button>
+        <button id="calculare" class="btn text-light bg-primary mb-2"><i class="bi bi-plus-circle"></i> <span id="txt-calculare">Suma preturilor</span></button><br>
+        <button id="sortCrescNume" class="btn text-light bg-primary mb-2"><i class="bi bi-sort-numeric-up"></i> <span id="txt-sortare-cresc">Sorteaza crescator dupa nume si descriere</span></button>
+        <button id="sortDescrescNume" class="btn text-light bg-primary mb-2"><i class="bi bi-sort-numeric-down"></i> <span id="txt-sortare-desc">Sorteaza descrescator dupa nume si descriere</span></button>
+        </p>
+    </div>
+</div>
+</div>
+</div>
+<div class="accordion-item" id="acc-itemTwo">
+    <button id="acc-buttonTwo" class="btn btn-secondary text-light mt-2 mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+    Ascunde Produse
+    </button>
+    <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo">
+        <div class="accordion-body">
+            <p id="fara-produse">Nu exista produse conform filtrelor selectate</p>
+        <section id="produse">
+            <h2>Produse</h2>
+            <div class="grid-produse">
+                <% for( let prod of locals.produse) { %>
+                    <article class="produs" >
+                        <h3 class="nume">Nume: <a href="/produs/<%-prod.id %>" ><span class="val-nume"><%- prod.nume%></span></a></h3>
+                        <div>
+                            <p class="categorie">Culoare:<span class="val-categorie"><%- prod.culoare%></span></p>
+                            <p class="descriere">Descriere:<span class="val-descriere"><%- prod.descriere%></span></p>
+                        <figure style="text-align: left;">
+                            <a href="/produs/<%-prod.id %>" ><img src="/resurse/imagini/produse/<%- prod.imagine %>" style="width:25em;height:auto;" alt="[imagine <%- prod.nume %>]" /></a>
+                        </figure>
+                        <div class="info-prod">
+                            <table>
+                                
+                                <tr>
+                                  <td class="pret">Pret: </td>
+                                  <td class="val-pret"><%- prod.pret%></td>
+                                </tr>
+                                <tr>
+                                  <td class="data_adaugare">Data adaugarii: </td>
+                                  <td class="val-data_adaugare"><%- prod.data_adaugare%></td>
+                                </tr>
+                                <tr>
+                                    <td class="pe_stoc">In stoc online: </td>
+                                    <td class="val-pe_stoc"><%- prod.pe_stoc%></td>
+                                </tr>
+                                <tr>
+                                    <td class="producator">Producator: </td>
+                                    <td class="val-producator"><%- prod.producator%></td>
+                                </tr>
+                                <tr>
+                                    <td class="disponibil_magazin">Disponibilitate in magazine:  </td>
+                                    <td class="val-disponibil_magazin"><%- prod.disponibil_magazin%></td>
+                                </tr>
+                                <tr>
+                                    <td class="latime_lentila">Latime lentila:  </td>
+                                    <td class="val-latime_lentila"><%- prod.latime_lentila%></td>
+                                </tr>
+                              </table>
+                        </div>
+                        
+
+                        <label class="selecteaza-cos">
+                            Selectează:<br/>
+                            <input type="checkbox" class="select-cos" value="<%-prod.id %>" autocomplete="off">
+                            <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                        </label>
+                    </div>
+                </article>
+            <% }%>
+        </div>
+    </section>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+    <%- include("../fragmente/footer") %>
+    </body>
+</html>

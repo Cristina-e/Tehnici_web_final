@@ -1,0 +1,61 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<header>
+ 
+    <div id="watermark">
+     
+    </div>
+    <div id="absolut">
+        Acesta este un proiect școlar. <span id="mesaj-cookies">Acceptati cookie-uri? <button id="ok_cookies" class="btn btn-secondary text-light">Ok</button></span>
+    </div>
+   
+    <div class="image"></div>
+    <div id="background-meniu">
+<!-- 5-->
+        <nav>
+            <label id="hamburger" for="ch-menu">
+                <img src="resurse/imagini/hamburger.png" alt="menu">
+            </label>
+            <input id="ch-menu" type="checkbox">
+            <ul class="meniu">
+                <li id="li-acasa">
+                    <div class="copil-acasa">
+                    
+                        <a href="/index">
+                            <i class="fa-solid fa-house-chimney"></i>
+                        </a>
+                        
+                    </div>
+                    <div class="copil-acasa" id="acasa"> Acasa</div>
+                <!-- <li><a href="index.html">Acasa</a> -->
+                    <ul>
+                        <li><a href="/index#noutati">Noutati</a></li>
+                        <li><a href="/index#vandut">Cele mai vandute produse</a></li>
+                        <li><a href="/index#promotie">Promotii</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div><a href="/produse">Produse</a></div>
+                    <ul>
+                        
+                        <% 
+                            console.log("In produse div", locals.tipuri);
+                            for(let idx in locals.tipuri) { %>
+                            <li><a href="/produse?tip=<%- locals.tipuri[idx].unnest %>"><%- locals.tipuri[idx].unnest %></a></li>
+                        <% } %>
+                    </ul>
+                </li>
+
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="/despre">Despre noi</a></li>
+                <li><a href="programare.html">Programari</a></li>
+                <li>
+                <div class="form-check form-switch">
+                    <input class="form-check-input bg-secondary mt-2" type="checkbox" role="switch" id="tema" checked>
+                    <label class="form-check-label" for="tema"><i style=" cursor: pointer; color: white !important;" class="fa-regular fa-moon"></i></label>
+                </div>
+            </li>
+            </ul>
+        </nav>
+    </div>
+
+</header>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <script type="text/javascript" src="/resurse/js/produs.js"></script>
+        <title>NewVision - home</title>
+        <%- include("../fragmente/head") %>     
+        <link rel="stylesheet" href="/resurse/css/produse/produs.css" type="text/css" />
+    </head>
+    <body>
+    <%- include("../fragmente/header") %>
+    <div id="link">
+        <div id="triunghi"><a href="#">&#5123</a></div>
+        <div id="text">Link top</div>
+    </div>
+    <main>
+        <section><br><br><br>
+            <h2>Pagină produs</h2>
+                <article id="art-produs">
+                    <h3><span class="nume"><%- locals.prod.nume %></span></h3>
+                    <p>Pret: <span class="pret"><%- locals.prod.pret %> </span></p>
+                    <p>Descriere: <span class="descriere"><%- locals.prod.descriere %> </span></p>
+                    <p>Disponibilitate in magazine : <span class="disponibil_magazin"><%- locals.prod.disponibil_magazin %> </span></p>
+                    <p>Latime lentila: <span class="latime_lentila"><%- locals.prod.latime_lentila %> </span></p>
+                    <p>Producator: <span class="producator"><%- locals.prod.producator %> </span></p>
+                    <p>Culoare: <span class="categorie"><%- locals.prod.culoare %> </span></p>
+                    <p>In stoc online: <span class="pe_stoc"><%- locals.prod.pe_stoc %> </span></p>
+                    <p>Data adăugare: <span class="data_adaugare"><%- locals.prod.data_adaugare %> </span></p>
+                    <figure class="imag-produs">
+                        <img  src="/resurse/imagini/produse/<%- locals.prod.imagine %>" alt="[imagine <%- locals.prod.nume %>]" />
+                    </figure>    
+                </article>
+            
+        </section>
+    </main>
+
+    <%- include("../fragmente/footer") %>
+    </body>
+</html>
